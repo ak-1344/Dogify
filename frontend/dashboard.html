@@ -88,7 +88,7 @@
                         <td>Golden Retriever</td>
                         <td>95%</td>
                         <td>2023-10-01 12:34:56</td>
-                        <td>
+                        <td class="actions">
                             <button>Edit</button>
                             <button>Delete</button>
                         </td>
@@ -98,7 +98,7 @@
                         <td>German Shepherd</td>
                         <td>90%</td>
                         <td>2023-10-02 14:22:33</td>
-                        <td>
+                        <td class="actions">
                             <button>Edit</button>
                             <button>Delete</button>
                         </td>
@@ -108,7 +108,7 @@
                         <td>Labrador Retriever</td>
                         <td>92%</td>
                         <td>2023-10-03 16:45:12</td>
-                        <td>
+                        <td class="actions">
                             <button>Edit</button>
                             <button>Delete</button>
                         </td>
@@ -120,14 +120,38 @@
         <div class="upload-new-image">
             <h2>Upload New Image</h2>
             <div class="upload-container">
-                <input type="file" id="file-upload" accept="image/*" style="display: none;">
-                <label for="file-upload" class="drag-drop">
-                    Drag and drop an image here or click to select a file
-                </label>
-                <button class="classify-btn">Classify</button>
+            <input type="file" id="file-upload" accept="image/*">
+            <label for="file-upload" class="drag-drop">
+                Drag and drop an image here or click to select a file
+            </label>
+            <button class="classify-btn" id="classify-btn">Classify</button>
             </div>
             <div class="image-preview" id="image-preview"></div>
+            <div class="classification-result" id="classification-result">
+            <h3>Classification Result</h3>
+            <p id="result-text">No image classified yet.</p>
+            </div>
         </div>
+
+        <script>
+            document.getElementById('file-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                const preview = document.getElementById('image-preview');
+                preview.innerHTML = '<img src="' + e.target.result + '" alt="Image Preview">';
+                };
+                reader.readAsDataURL(file);
+            }
+            });
+
+            document.getElementById('classify-btn').addEventListener('click', function() {
+            const resultText = document.getElementById('result-text');
+            // Simulate classification result
+            resultText.textContent = 'Classified as: Golden Retriever with 95% confidence.';
+            });
+        </script>
     </main>
 
     <script>
