@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
     
-        alert("Login successful!");
+        localStorage.setItem("loginSuccess", "true");
+        window.location.href = "dashboard.html";
     });
 });
+
+
