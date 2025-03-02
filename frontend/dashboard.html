@@ -42,25 +42,106 @@
             </div>
         </nav>
     </header>
+
+
+
+
+    
     <main class="dashboard-container">
         <div class="dashboard-header">Your Dashboard</div>
         <div class="dog-info">
             <div class="dog-card">
-                <img src="dog1.jpg" alt="Dog 1">
+                <img src="./../assets/dog1.png" alt="Dog 1">
                 <h3>Golden Retriever</h3>
                 <p>Loyal and friendly breed.</p>
             </div>
             <div class="dog-card">
-                <img src="dog2.jpg" alt="Dog 2">
+                <img src="./../assets/dog2.png" alt="Dog 2">
                 <h3>German Shepherd</h3>
                 <p>Intelligent and protective breed.</p>
             </div>
             <div class="dog-card">
-                <img src="dog3.jpg" alt="Dog 3">
+                <img src="./../assets/dog3.png" alt="Dog 3">
                 <h3>Labrador Retriever</h3>
                 <p>Gentle and outgoing breed.</p>
             </div>
         </div>
+
+
+
+
+        <div class="dog-classification-history">
+            <h2>Dog Classification History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thumbnail</th>
+                        <th>Breed</th>
+                        <th>Confidence</th>
+                        <th>Timestamp</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="./../assets/dog_paw.png" alt="Dog 1 Thumbnail"></td>
+                        <td>Golden Retriever</td>
+                        <td>95%</td>
+                        <td>2023-10-01 12:34:56</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="./../assets/dog_paw.png" alt="Dog 2 Thumbnail"></td>
+                        <td>German Shepherd</td>
+                        <td>90%</td>
+                        <td>2023-10-02 14:22:33</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="./../assets/dog_paw.png" alt="Dog 3 Thumbnail"></td>
+                        <td>Labrador Retriever</td>
+                        <td>92%</td>
+                        <td>2023-10-03 16:45:12</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="upload-new-image">
+            <h2>Upload New Image</h2>
+            <div class="upload-container">
+                <input type="file" id="file-upload" accept="image/*" style="display: none;">
+                <label for="file-upload" class="drag-drop">
+                    Drag and drop an image here or click to select a file
+                </label>
+                <button class="classify-btn">Classify</button>
+            </div>
+            <div class="image-preview" id="image-preview"></div>
+        </div>
     </main>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('image-preview');
+                    preview.innerHTML = '<img src="' + e.target.result + '" alt="Image Preview">';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
