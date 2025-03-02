@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <img src="/assets/dog.png" alt="Dog Icon"> Welcome to your Dog Information Dashboard
+        </div>
+        <nav>
+            <div class="nav-left">
+                <div class="logo"><a class="logo" href="index.html">Dogify</a></div>
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search for dog breeds...">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+            <div class="icons">
+                <div class="dropdown">
+                    <span class="dropdown-toggle">👤 User Profile</span>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="dashboard.html">Dashboard</a>
+                        <a href="index.html">Home</a>
+                        <a href="setting.html">Settings</a>
+                        <a href="index.html" onclick="signout()">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="dashboard-header">Your Dashboard</div>
+        <div class="dog-info">
+            <div class="dog-card">
+                <img src="/assets/dog1.png" alt="Golden Retriever">
+                <h3>Golden Retriever</h3>
+                <p>Loyal and friendly breed.</p>
+            </div>
+            <div class="dog-card">
+                <img src="/assets/dog2.png" alt="German Shepherd">
+                <h3>German Shepherd</h3>
+                <p>Intelligent and protective breed.</p>
+            </div>
+            <div class="dog-card">
+                <img src="/assets/dog3.png" alt="Labrador Retriever">
+                <h3>Labrador Retriever</h3>
+                <p>Gentle and outgoing breed.</p>
+            </div>
+        </div>
+
+        <div class="dog-classification-history">
+            <h2>Dog Classification History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thumbnail</th>
+                        <th>Breed</th>
+                        <th>Confidence</th>
+                        <th>Timestamp</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/assets/dog_paw.png" alt="Dog 1 Thumbnail"></td>
+                        <td>Golden Retriever</td>
+                        <td>95%</td>
+                        <td>2023-10-01 12:34:56</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/dog_paw.png" alt="Dog 2 Thumbnail"></td>
+                        <td>German Shepherd</td>
+                        <td>90%</td>
+                        <td>2023-10-02 14:22:33</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/assets/dog_paw.png" alt="Dog 3 Thumbnail"></td>
+                        <td>Labrador Retriever</td>
+                        <td>92%</td>
+                        <td>2023-10-03 16:45:12</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="upload-new-image">
+            <h2>Upload New Image</h2>
+            <div class="upload-container">
+                <input type="file" id="file-upload" accept="image/*" hidden>
+                <label for="file-upload" class="drag-drop">
+                    Drag and drop an image here or click to select a file
+                </label>
+                <button class="classify-btn">Classify</button>
+            </div>
+            <div class="image-preview" id="image-preview"></div>
+        </div>
+    </main>
+
+    <script>
+        // Dropdown Hover Effect
+        document.querySelector('.dropdown').addEventListener('mouseover', function() {
+            this.querySelector('.dropdown-content').style.display = 'block';
+        });
+
+        document.querySelector('.dropdown').addEventListener('mouseout', function() {
+            this.querySelector('.dropdown-content').style.display = 'none';
+        });
+
+        // Image Upload Preview
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image-preview').innerHTML = 
+                        `<img src="${e.target.result}" alt="Image Preview">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Signout Function
+        function signout() {
+            alert("You have been signed out.");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

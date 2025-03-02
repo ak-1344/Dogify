@@ -11,9 +11,9 @@
         <div class="top-bar">🎉 Get 2X Points on Every Purchase | Limited Time Deal</div>
         <nav>
             <div class="logo">Dogify</div>
-            <input type="text" class="search-bar" placeholder="Search For">
+            <input type="text" class="search-bar" placeholder="Search For Dog Food">
             <button class="search-btn">
-                <img src="searc.svg" alt="">
+                <img src="searc.svg" alt="Search">
             </button>
             <ul class="nav-links">
                 <li>Dogs</li>
@@ -21,40 +21,41 @@
             </ul>
             <div class="icons">
                 <span>👤</span>
-                <a href="index.html">
-                    <span>login </span>
-                </a>
-                <a href="signin.html">
-                    <span> /sign up</span>
-                </a>
+                <a href="/login"><span>Login</span></a>
+                <a href="/signup"><span>/ Sign Up</span></a>
             </div>
         </nav>
     </header>
+
     <main>
         <div class="signup-container">
             <div class="brand">Dogify</div>
             <h2>Sign Up</h2>
             <p>Create your account</p>
-            <form method="post" action="/signup">
-            <div class="input-group">
-                <input type="text" placeholder="Enter Username" name="username">
-            </div>
-            <div class="input-group">
-                <input type="email" placeholder="Email Address" name="email">
-            </div>
-            <div class="input-group">
-                <input type="text" placeholder="Whatsapp number" name="number">
-            </div>
-            <div class="input-group">
-                <input type="Password" placeholder="Password" name="password">
-            </div>
-            <div class="input-group">
-                <input type="Confirm Password" placeholder="Confirm Password">
-            </div>
-            <button class="signup-btn">Sign Up →</button>
-        </form>
+
+            <form action="/signup" method="POST">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="phone" name="phone" placeholder="WhatsApp Number" pattern="[0-9]{10}" title="Enter a valid 10-digit number" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" minlength="6" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" minlength="6" required>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up →</button>
+            </form>
+
             <p class="terms">By signing up, you agree to our <a href="#">Privacy Policy</a> and <a href="#">T&Cs</a>.</p>
         </div>
     </main>
+
+    <script src="signin.js"></script>
 </body>
 </html>
