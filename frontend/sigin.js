@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        alert("Signup successful!");
+        localStorage.setItem("loginSuccess", "true");
+        window.location.href = "index.html";
     });
 });
