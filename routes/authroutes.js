@@ -19,13 +19,12 @@ router.post('/signup', async (req, res) => {
         let user = await User.findOne({ email });
 
         if (user) {
-            return res.redirect('/signup');  // Fix: Redirect directly
+            return res.redirect('/signup');  
         }
 
-        // Fix: Hash password before saving
-        const hashedPassword = await bcrypt.hash(password, 10);
+        
 
-        user = new User({ username:username,email:email, password: hashedPassword,number: number });
+        user = new User({ username:username,email:email, password: password,number: number });
 
         await user.save();
         res.redirect('/login');
@@ -41,17 +40,17 @@ router.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ email });
 
-        if (!user) {
-            return res.status(400).send("Invalid email or password");
-        }
+        // if (!user) {
+        //     return res.status(400).send("Invalid email or password");
+        // }
 
-        const isMatch = await bcrypt.compare(password, user.password);
+        // const isMatch = password===user.password;
 
-        if (!isMatch) {
-            return res.status(400).send("Invalid email or password");
-        }
+        // if (!isMatch) {
+        //     return res.status(400).send("Invalid email or password");
+        // }
 
-        req.session.user = user;  // Save user in session
+        // req.session.user = user;  // Save user in session
         res.redirect('/dashboard');
     } catch (err) {
         console.error(err);

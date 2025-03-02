@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
     <header>
         <div class="top-bar">
-            <img src="/assets/dog.png" alt="Dog Icon"> Welcome to your Dog Information Dashboard
+            <img src="dog.png" alt="Dog Icon"> Welcome to your Dog Information Dashboard
         </div>
         <nav>
             <div class="nav-left">
@@ -23,11 +23,11 @@
                 <div class="dropdown">
                     <span class="dropdown-toggle">👤 User Profile</span>
                     <div class="dropdown-content">
-                        <a href="profile.html">Profile</a>
-                        <a href="dashboard.html">Dashboard</a>
-                        <a href="index.html">Home</a>
-                        <a href="setting.html">Settings</a>
-                        <a href="index.html" onclick="signout()">Sign Out</a>
+                        <a href="profile.ejs">Profile</a>
+                        <a href="dashboard.ejs">Dashboard</a>
+                        <a href="index.ejs">Home</a>
+                        <a href="setting.ejs">Settings</a>
+                        <a href="index.ejs" onclick="signout()">Sign Out</a>
                     </div>
                 </div>
             </div>
@@ -38,17 +38,17 @@
         <div class="dashboard-header">Your Dashboard</div>
         <div class="dog-info">
             <div class="dog-card">
-                <img src="/assets/dog1.png" alt="Golden Retriever">
+                <img src="dog1.png" alt="Golden Retriever">
                 <h3>Golden Retriever</h3>
                 <p>Loyal and friendly breed.</p>
             </div>
             <div class="dog-card">
-                <img src="/assets/dog2.png" alt="German Shepherd">
+                <img src="dog2.png" alt="German Shepherd">
                 <h3>German Shepherd</h3>
                 <p>Intelligent and protective breed.</p>
             </div>
             <div class="dog-card">
-                <img src="/assets/dog3.png" alt="Labrador Retriever">
+                <img src="dog3.png" alt="Labrador Retriever">
                 <h3>Labrador Retriever</h3>
                 <p>Gentle and outgoing breed.</p>
             </div>
@@ -68,7 +68,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="/assets/dog_paw.png" alt="Dog 1 Thumbnail"></td>
+                        <td><img src="dog_paw.png" alt="Dog 1 Thumbnail"></td>
                         <td>Golden Retriever</td>
                         <td>95%</td>
                         <td>2023-10-01 12:34:56</td>
@@ -78,7 +78,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="/assets/dog_paw.png" alt="Dog 2 Thumbnail"></td>
+                        <td><img src="dog_paw.png" alt="Dog 2 Thumbnail"></td>
                         <td>German Shepherd</td>
                         <td>90%</td>
                         <td>2023-10-02 14:22:33</td>
@@ -88,7 +88,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="/assets/dog_paw.png" alt="Dog 3 Thumbnail"></td>
+                        <td><img src="dog_paw.png" alt="Dog 3 Thumbnail"></td>
                         <td>Labrador Retriever</td>
                         <td>92%</td>
                         <td>2023-10-03 16:45:12</td>
@@ -108,9 +108,13 @@
                 <label for="file-upload" class="drag-drop">
                     Drag and drop an image here or click to select a file
                 </label>
-                <button class="classify-btn">Classify</button>
+                <button id="classify-btn" class="classify-btn">Classify</button>
             </div>
             <div class="image-preview" id="image-preview"></div>
+            <div class="classification-result" id="classification-result">
+                <h3>Classification Result</h3>
+                <p id="result-text">No image classified yet.</p>
+            </div>
         </div>
     </main>
 
@@ -137,7 +141,11 @@
             }
         });
 
-        // Signout Function
+        document.getElementById('classify-btn').addEventListener('click', function() {
+            const resultText = document.getElementById('result-text');
+            resultText.textContent = 'Classified as: Golden Retriever with 95% confidence.';
+        });
+
         function signout() {
             alert("You have been signed out.");
             window.location.href = "index.html";
