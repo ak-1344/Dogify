@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogify - AI Dog Breed Classifier</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Dogify</h1> 
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#classifier">Classifier</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="/login">Login</a></li>  <!-- ✅ Fixed Path -->
+                <li><a href="/signup">Sign Up</a></li>  <!-- ✅ Added Signup Link -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Dogify</h2>
+        <p>Use our cutting-edge AI to classify dog breeds from images.</p>
+        
+        <div class="dog-grid">
+            <div class="dog-card"><img src="affenpinscher.webp" alt="Dog 1"><h3>Affenpinscher</h3></div>
+            <div class="dog-card"><img src="afghanhound.webp" alt="Dog 2"><h3>Afghan Hound</h3></div>
+            <div class="dog-card"><img src="airedaleterrier.webp" alt="Dog 3"><h3>Airedale Terrier</h3></div>
+        </div>
+        
+        <button onclick="location.href='#classifier'">Try Now</button>
+    </section>
+
+    <section id="classifier">
+        <h2>AI Dog Breed Classifier</h2>
+        <form id="upload-form" action="/classify" method="POST" enctype="multipart/form-data"> <!-- ✅ Added Action -->
+            <input type="file" name="dog-image" accept="image/*" required>
+            <button type="submit">Upload and Classify</button>
+        </form>
+        <div id="result"></div>
+    </section>
+
+    <section id="products">
+        <h2>Products</h2>
+        <p>Buy the best products for your dog.</p>
+    </section>
+
+    <section id="pricing">
+        <h2>Subscription Plans</h2>
+        <p>Choose the best plan for you and your dog.</p>
+    </section>
+
+    <section id="feedback">
+        <h2>Feedback</h2>
+        <form id="feedback-form" action="/submit-feedback" method="POST"> <!-- ✅ Added Action -->
+            <label for="feedback-text">Your Feedback:</label>
+            <textarea name="feedback-text" id="feedback-text" rows="4" cols="50" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form id="login-form" action="/login" method="POST"> <!-- ✅ Added Action -->
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p> <!-- ✅ Fixed Link -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dogify. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

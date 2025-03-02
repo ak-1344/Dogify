@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with OTP</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">🎉 Get 2X Points on Every Purchase | Limited Time Deal</div>
+        <nav>
+            <div class="logo">Dogify</div>
+            <input type="text" class="search-bar" placeholder="Search For Dog Food">
+            <button class="search-btn">
+                <img src="searc.svg" alt="">
+            </button>
+            <ul class="nav-links">
+                <li>Dogs</li>
+                <li>Know Your Breeds</li>
+            </ul>
+            <div class="icons">
+                <span>👤</span>
+                <a href="/login">
+                    <span>Login</span>
+                </a>
+                <a href="/signup">
+                    <span>/ Sign Up</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="brand">
+                <h2>Dogify</h2>
+            </div>
+            <h2>Login with OTP</h2>
+            <p>Enter your login details</p>
+            
+            <form id="login-form" action="/login" method="POST">  <!-- ✅ Now the form submits properly -->
+                <div class="input-group">
+                    <input type="text" name="username" id="username" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="otp" id="otp" placeholder="Enter OTP" required>
+                </div>
+                <button type="button" id="send-otp-btn">Send OTP</button> <!-- ✅ OTP Send Button -->
+                <button type="submit" class="login-btn">Login →</button>
+            </form>
+
+            <p class="terms">I accept that I have read & understood <a href="#">Privacy Policy</a> and <a href="#">T&Cs</a>.</p>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

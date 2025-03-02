@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
     <header>
         <div class="top-bar">🎉 Get 2X Points on Every Purchase | Limited Time Deal</div>
         <nav>
             <div class="logo">Dogify</div>
-            <input type="text" class="search-bar" placeholder="Search For Dog Food">
+            <input type="text" class="search-bar" placeholder="Search For">
             <button class="search-btn">
-                <img src="./../assets/searc.svg" alt="">
+                <img src="searc.svg" alt="">
             </button>
             <ul class="nav-links">
                 <li>Dogs</li>
@@ -21,10 +21,10 @@
             </ul>
             <div class="icons">
                 <span>👤</span>
-                <a href="/login">
+                <a href="index.html">
                     <span>login </span>
                 </a>
-                <a href="/signup">
+                <a href="signin.html">
                     <span> /sign up</span>
                 </a>
             </div>
@@ -35,25 +35,26 @@
             <div class="brand">Dogify</div>
             <h2>Sign Up</h2>
             <p>Create your account</p>
+            <form method="post" action="/signup">
             <div class="input-group">
-                <input type="text" id="username" placeholder="Full Name">
+                <input type="text" placeholder="Enter Username" name="username">
             </div>
             <div class="input-group">
-                <input type="email" id="email" placeholder="Email Address">
+                <input type="email" placeholder="Email Address" name="email">
             </div>
             <div class="input-group">
-                <input type="text"  id="phone" placeholder="Whatsapp number">
+                <input type="text" placeholder="Whatsapp number" name="number">
             </div>
             <div class="input-group">
-                <input type="Password" id="password" placeholder="Password">
+                <input type="Password" placeholder="Password" name="password">
             </div>
             <div class="input-group">
-                <input type="Password" id="confirmpassword" placeholder="Confirm Password">
+                <input type="Confirm Password" placeholder="Confirm Password">
             </div>
             <button class="signup-btn">Sign Up →</button>
+        </form>
             <p class="terms">By signing up, you agree to our <a href="#">Privacy Policy</a> and <a href="#">T&Cs</a>.</p>
         </div>
     </main>
-    <script src="sigin.js"></script>
 </body>
 </html>
