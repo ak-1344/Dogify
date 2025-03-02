@@ -39,17 +39,14 @@
             <h2>Login with OTP</h2>
             <p>Enter your login details</p>
             
-            <form id="login-form" action="/login" method="POST">  <!-- ✅ Now the form submits properly -->
+            <form id="login-form" action="/login" method="POST">  
                 <div class="input-group">
                     <input type="text" name="username" id="username" placeholder="Full Name" required>
                 </div>
                 <div class="input-group">
                     <input type="text" name="password" id="password" placeholder="Password" required>
                 </div>
-                <div class="input-group">
-                    <input type="text" name="otp" id="otp" placeholder="Enter OTP" required>
-                </div>
-                <button type="button" id="send-otp-btn">Send OTP</button> <!-- ✅ OTP Send Button -->
+                
                 <button type="submit" class="login-btn">Login →</button>
             </form>
 

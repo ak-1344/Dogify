@@ -141,10 +141,46 @@
             }
         });
 
-        document.getElementById('classify-btn').addEventListener('click', function() {
-            const resultText = document.getElementById('result-text');
-            resultText.textContent = 'Classified as: Golden Retriever with 95% confidence.';
+        document.getElementById('classify-btn').addEventListener('click', async function() {
+    const fileInput = document.getElementById('file-upload');
+    const resultText = document.getElementById('result-text');
+
+    if (fileInput.files.length === 0) {
+        alert('Please upload an image first.');
+        return;
+    }
+
+    const file = fileInput.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'your_upload_preset');  // Replace with your Cloudinary preset
+
+    try {
+        // Upload Image to Cloudinary
+        const cloudinaryResponse = await fetch('cloudinary://269643318529427:sr2yUE0qOfMiun6Q8opHgaa_FEg@dxxoqz1l6', {
+            method: 'POST',
+            body: formData
         });
+
+        const cloudinaryData = await cloudinaryResponse.json();
+        const imageUrl = cloudinaryData.secure_url;  // Get the URL of the uploaded image
+
+        // Now send the image URL to your classification API which will be our AI Model
+        // const classifyResponse = await fetch('https://your-api-url.com/classify', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ imageUrl })
+        // });
+
+        const classifyData = await classifyResponse.json();
+        resultText.textContent = `Classified as: ${classifyData.breed} with ${classifyData.confidence}% confidence.`;
+
+    } catch (error) {
+        console.error(error);
+        resultText.textContent = 'Error classifying image.';
+    }
+});
+
 
         function signout() {
             alert("You have been signed out.");

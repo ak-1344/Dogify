@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogify - AI Dog Breed Classifier</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Dogify</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#classifier">Classifier</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="bg-gray-100 py-12">
+        <h2 class="text-4xl font-bold text-center mb-8">Welcome to Dogify</h2>
+        <p class="text-center text-lg mb-12">Use our cutting-edge AI to classify dog breeds from images.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
+            <div class="dog-card text-center">
+                <img src="./../assets/affenpinscher.webp" alt="Dog 1" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">affenpinscher</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/afghanhound.webp" alt="Dog 2" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">afghan hound</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/affenpinscher.webp" alt="Dog 3" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">airedale terrier</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/akita.webp" alt="Dog 4" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">akita</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/alaskanhusky.webp" alt="Dog 5" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">alaskanhusky</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/alaskanmalamute.webp" alt="Dog 6" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">alaskanmalamute</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/americanbulldog.webp" alt="Dog 7" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">americanbulldog</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/americanstaffordshire.webp" alt="Dog 8" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">americanstaffordshire</h3>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <button onclick="location.href='#classifier'" class="bg-red-500 text-white font-semibold py-2 px-8 rounded-full hover:bg-red-600 transition">Try Now</button>
+        </div>
+    </section>
+
+    <section id="classifier">
+        <h2>AI Dog Breed Classifier</h2>
+        <p>Welcome to the AI Dog Breed Classifier! Here, you can upload a picture of your dog, and our advanced AI will analyze the image to determine the breed. It's quick, easy, and fun!</p>
+        <p>Our AI model has been trained on thousands of images of different dog breeds, ensuring high accuracy and reliability. Whether you have a purebred or a mixed breed, our classifier can provide you with detailed information about your dog's breed composition.</p>
+        <p>To get started, simply log in to your account and navigate to the dashboard. From there, you can upload a clear picture of your dog, and our AI will do the rest. If you don't have an account yet, make sure to sign up and join the Dogify community!</p>
+        <p>Our platform is designed to be user-friendly and accessible to everyone. We believe that understanding your dog's breed can help you provide better care and meet their specific needs. Plus, it's always fun to learn more about your furry friend's heritage!</p>
+        <p>Don't wait any longer! Log in now and discover the breed of your furry friend. If you have any questions or need assistance, our support team is here to help. Happy classifying!</p>
+        <p>To get started, please log in to your account and head over to the dashboard. From there, you can upload your dog's picture and let our AI do the magic. If you don't have an account yet, make sure to sign up and join the Dogify community!</p>
+        <p>Our AI is trained on a vast dataset of dog breeds, ensuring accurate and reliable results. Whether you're curious about your dog's breed or just want to have some fun, Dogify is here to help.</p>
+        <p>Don't wait any longer! Log in now and discover the breed of your furry friend.</p>
+        <div id="result"></div>
+        <p><strong>Login to analyze the picture of your dog.</strong></p>
+    </section>
+
+    <section id="products">
+        <h2>Products</h2>
+        <p>Buy the best products for your dog.</p>
+        <p>"Every dog deserves the best, and at Dogify, we are committed to providing high-quality products that cater
+            <br>
+            to your furry friend's every need. Whether you're looking for nutritious and delicious food to keep them
+            <br>
+            strong and energetic, cozy beds for a restful sleep, durable and fun toys to keep them engaged, or stylish
+            <br>
+            collars and accessories to make them stand out, we have it all. Our carefully curated selection ensures
+            that<br>
+            your dog enjoys the best care possible, with products designed for their health, comfort, and happiness.
+            We<br>
+            understand that every pup is unique, which is why we offer a variety of options to suit different
+            breeds,<br>
+            sizes, and preferences. From training essentials to grooming supplies, our collection is built with love
+            and<br>
+            expertise to make your dog's life better. When you choose Dogify, you're choosing premium quality,<br>
+            reliability, and a promise to enhance the bond between you and your four-legged companion. Browse our<br>
+            collection today and give your dog the love and care they deserve!<br>
+
+            At Dogify, we go beyond just selling pet products—we are passionate about ensuring that every dog enjoys
+            a<br>
+            fulfilling and joyful life. Our food selection includes premium kibble, wet food, and treats made with<br>
+            high-quality ingredients to support their health and nutrition. We also offer orthopedic and memory foam<br>
+            beds to provide the ultimate comfort, along with durable chew toys to keep them entertained and mentally<br>
+            stimulated. For those who love to take their dogs on adventures, we have sturdy leashes, harnesses, and<br>
+            travel essentials to make every trip safe and enjoyable. Grooming is just as important, and our range of<br>
+            shampoos, brushes, and dental care products ensures that your pup stays fresh and clean. Whether you're
+            a<br>
+            new dog parent or a seasoned pet owner, our products are designed to make your life easier and your
+            dog’s<br>
+            life better. Shop with confidence, knowing that every item is selected with care and expertise to give
+            your<br>
+            furry friend the very best!"
+        </p>
+        <!-- Add product listings here -->
+    </section>
+
+    <section id="pricing">
+        <h2>Subscription Plans</h2>
+        <p>Choose the best plan for you and your dog.</p>
+        <p>
+            Choose the Perfect Subscription Plan for You and Your Dog! <br>
+
+            At Dogify, we offer flexible and affordable subscription plans to ensure your furry friend gets the best<br>
+            care, nutrition, and entertainment every month. Whether you're a new pet parent or an experienced dog owner,<br>
+            our plans are designed to meet your dog's unique needs while saving you time and money.<br>
+
+            🐾 Basic Plan (Starter Pack) - $9.99/month<br>
+            ✔️ Monthly supply of healthy dog treats<br>
+            ✔️ Access to basic training tips and guides<br>
+            ✔️ Exclusive discounts on dog food and accessories<br>
+
+            🐶 Standard Plan (Essential Care) - $19.99/month<br>
+            ✔️ Everything in the Basic Plan<br>
+            ✔️ Premium quality dog food samples<br>
+            ✔️ Monthly interactive toy to keep your dog engaged<br>
+            ✔️ Early access to new products and seasonal sales<br>
+
+            🏆 Premium Plan (Ultimate Dog Care) - $29.99/month<br>
+            ✔️ Everything in the Standard Plan<br>
+            ✔️ Full-size premium dog food bag of your choice<br>
+            ✔️ Personalized training and nutrition recommendations<br>
+            ✔️ Special dog grooming kit delivered every 3 months<br>
+            ✔️ Priority customer support and a VIP loyalty program<br>
+
+            Why Choose a Subscription Plan?<br>
+            ✔️ Saves you money on premium products<br>
+            ✔️ Ensures your dog always gets the best care<br>
+            ✔️ Convenient, hassle-free monthly deliveries<br>
+            ✔️ Tailored to your dog’s needs and preferences<br>
+
+            Join thousands of happy pet parents and subscribe today! Give your dog the love, health, and happiness they<br>
+            deserve with Dogify. 🐕💖
+        </p>
+        <!-- Add pricing tiers here -->
+    </section>
+
+    <main class="flex flex-col items-center mt-12">
+        <h1 class="text-3xl text-red-500 font-semibold">We'd Love Your Feedback!</h1>
+        <form class="bg-white shadow-md rounded-lg p-8 mt-8 w-1/2">
+            <label class="block text-gray-700 text-lg mb-2" for="name">Name (Optional)</label>
+            <input type="text" id="name" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4" placeholder="Your Name">
+
+            <label class="block text-gray-700 text-lg mb-2" for="feedback">Your Feedback</label>
+            <textarea id="feedback" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4" rows="5" placeholder="Let us know your thoughts..."></textarea>
+
+            <label class="block text-gray-700 text-lg mb-2" for="rating">Rating</label>
+            <select id="rating" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4">
+                <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                <option value="4">⭐⭐⭐⭐ - Very Good</option>
+                <option value="3">⭐⭐⭐ - Good</option>
+                <option value="2">⭐⭐ - Fair</option>
+                <option value="1">⭐ - Poor</option>
+            </select>
+
+            <button type="submit" class="bg-red-500 text-white font-semibold py-2 px-8 rounded-full hover:bg-red-600 transition">Submit Feedback</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Dogify. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
