@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="dashboard.css"> -->
 </head>
 <body>
     <header>
@@ -13,14 +14,31 @@
         </div>
         <nav>
             <div class="nav-left">
-                <div class="logo">Dogify</div>
+                <div class="logo"><a class="logo" href="index.html">Dogify</a></div>
                 <div class="search-container">
                     <input type="text" class="search-bar" placeholder="Search for dog breeds...">
                     <button class="search-btn">🔍</button>
                 </div>
             </div>
             <div class="icons">
-                <span>👤 User Profile</span>
+                <div class="dropdown" style="position: relative; display: inline-block;">
+                    <span style="cursor: pointer;">👤 User Profile</span>
+                    <div class="dropdown-content" >
+                        <a href="profile.html" >Profile</a>
+                        <a href="dashboard.html">Dashboard</a>
+                        <a href="index.html">Home</a>
+                        <a href="setting.html" >Settings</a>
+                        <a href="index.html" onclick="signout()">Sign Out</a>
+                    </div>
+                </div>
+                <script>
+                    document.querySelector('.dropdown').addEventListener('mouseover', function() {
+                        this.querySelector('.dropdown-content').style.display = 'block';
+                    });
+                    document.querySelector('.dropdown').addEventListener('mouseout', function() {
+                        this.querySelector('.dropdown-content').style.display = 'none';
+                    });
+                </script>
             </div>
         </nav>
     </header>
