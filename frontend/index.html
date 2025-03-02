@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dogify - AI Dog Breed Classifier</title>
     <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body>
@@ -23,52 +25,60 @@
         </nav>
     </header>
 
-    <section id="home">
-        <h2>Welcome to Dogify</h2>
-        <p>Use our cutting-edge AI to classify dog breeds from images.</p>
-        <div class="dog-grid">
-            <div class="dog-card"><img src="./../assets/affenpinscher.webp" alt="Dog 1">
-                <h3>affenpinscher</h3>
+    <section id="home" class="bg-gray-100 py-12">
+        <h2 class="text-4xl font-bold text-center mb-8">Welcome to Dogify</h2>
+        <p class="text-center text-lg mb-12">Use our cutting-edge AI to classify dog breeds from images.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
+            <div class="dog-card text-center">
+                <img src="./../assets/affenpinscher.webp" alt="Dog 1" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">affenpinscher</h3>
             </div>
-            <div class="dog-card"><img src="./../assets/afghanhound.webp" alt="Dog 2">
-                <h3>afghan hound</h3>
+            <div class="dog-card text-center">
+                <img src="./../assets/afghanhound.webp" alt="Dog 2" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">afghan hound</h3>
             </div>
-            <div class="dog-card"><img src="./../assets/affenpinscher.webp" alt="Dog 3">
-                <h3>airedale terrier</h3>
+            <div class="dog-card text-center">
+                <img src="./../assets/affenpinscher.webp" alt="Dog 3" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">airedale terrier</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/akita.webp" alt="Dog 4" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">akita</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/alaskanhusky.webp" alt="Dog 5" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">alaskanhusky</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/alaskanmalamute.webp" alt="Dog 6" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">alaskanmalamute</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/americanbulldog.webp" alt="Dog 7" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">americanbulldog</h3>
+            </div>
+            <div class="dog-card text-center">
+                <img src="./../assets/americanstaffordshire.webp" alt="Dog 8" class="w-48 h-48 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">americanstaffordshire</h3>
             </div>
         </div>
-        <div class="dog-grid">
-            <div class="dog-card"><img src="./../assets/akita.webp" alt="Dog 4">
-                <h3>akita</h3>
-            </div>
-            <div class="dog-card"><img src="./../assets/alaskanhusky.webp" alt="Dog 5">
-                <h3>alaskanhusky</h3>
-            </div>
-            <div class="dog-card"><img src="./../assets/alaskanmalamute.webp" alt="Dog 6">
-                <h3>alaskanmalamute</h3>
-            </div>
+        <div class="text-center mt-12">
+            <button onclick="location.href='#classifier'" class="bg-red-500 text-white font-semibold py-2 px-8 rounded-full hover:bg-red-600 transition">Try Now</button>
         </div>
-        <div class="dog-grid">
-            <div class="dog-card"><img src="./../assets/americanbulldog.webp" alt="Dog 7">
-                <h3>americanbulldog</h3>
-            </div>
-            <div class="dog-card"><img src="./../assets/americanstaffordshire.webp" alt="Dog 8">
-                <h3>americanstaffordshire</h3>
-            </div>
-            <div class="dog-card"><img src="./../assets/australianbulldog.webp" alt="Dog 9">
-                <h3>australianbulldog</h3>
-            </div>
-        </div>
-        <button onclick="location.href='#classifier'">Try Now</button>
     </section>
 
     <section id="classifier">
         <h2>AI Dog Breed Classifier</h2>
-        <form id="upload-form">
-            <input type="file" id="dog-image" accept="image/*">
-            <button type="submit">Upload and Classify</button>
-        </form>
+        <p>Welcome to the AI Dog Breed Classifier! Here, you can upload a picture of your dog, and our advanced AI will analyze the image to determine the breed. It's quick, easy, and fun!</p>
+        <p>Our AI model has been trained on thousands of images of different dog breeds, ensuring high accuracy and reliability. Whether you have a purebred or a mixed breed, our classifier can provide you with detailed information about your dog's breed composition.</p>
+        <p>To get started, simply log in to your account and navigate to the dashboard. From there, you can upload a clear picture of your dog, and our AI will do the rest. If you don't have an account yet, make sure to sign up and join the Dogify community!</p>
+        <p>Our platform is designed to be user-friendly and accessible to everyone. We believe that understanding your dog's breed can help you provide better care and meet their specific needs. Plus, it's always fun to learn more about your furry friend's heritage!</p>
+        <p>Don't wait any longer! Log in now and discover the breed of your furry friend. If you have any questions or need assistance, our support team is here to help. Happy classifying!</p>
+        <p>To get started, please log in to your account and head over to the dashboard. From there, you can upload your dog's picture and let our AI do the magic. If you don't have an account yet, make sure to sign up and join the Dogify community!</p>
+        <p>Our AI is trained on a vast dataset of dog breeds, ensuring accurate and reliable results. Whether you're curious about your dog's breed or just want to have some fun, Dogify is here to help.</p>
+        <p>Don't wait any longer! Log in now and discover the breed of your furry friend.</p>
         <div id="result"></div>
+        <p><strong>Login to analyze the picture of your dog.</strong></p>
     </section>
 
     <section id="products">
@@ -150,14 +160,27 @@
         <!-- Add pricing tiers here -->
     </section>
 
-    <section id="feedback">
-        <h2>Feedback</h2>
-        <form id="feedback-form">
-            <label for="feedback-text">Your Feedback:</label>
-            <textarea id="feedback-text" rows="4" cols="50"></textarea>
-            <button type="submit">Submit</button>
+    <main class="flex flex-col items-center mt-12">
+        <h1 class="text-3xl text-red-500 font-semibold">We'd Love Your Feedback!</h1>
+        <form class="bg-white shadow-md rounded-lg p-8 mt-8 w-1/2">
+            <label class="block text-gray-700 text-lg mb-2" for="name">Name (Optional)</label>
+            <input type="text" id="name" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4" placeholder="Your Name">
+
+            <label class="block text-gray-700 text-lg mb-2" for="feedback">Your Feedback</label>
+            <textarea id="feedback" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4" rows="5" placeholder="Let us know your thoughts..."></textarea>
+
+            <label class="block text-gray-700 text-lg mb-2" for="rating">Rating</label>
+            <select id="rating" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4">
+                <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                <option value="4">⭐⭐⭐⭐ - Very Good</option>
+                <option value="3">⭐⭐⭐ - Good</option>
+                <option value="2">⭐⭐ - Fair</option>
+                <option value="1">⭐ - Poor</option>
+            </select>
+
+            <button type="submit" class="bg-red-500 text-white font-semibold py-2 px-8 rounded-full hover:bg-red-600 transition">Submit Feedback</button>
         </form>
-    </section>
+    </main>
 
     <footer>
         <p>&copy; 2023 Dogify. All rights reserved.</p>

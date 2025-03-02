@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Dogify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-white">
+    <!-- Header -->
+    <header>
+        <div class="bg-gray-100 text-center py-2 flex items-center justify-center gap-2">
+            <img src="./../assets/dog.png" alt="Dog Icon" class="w-6 h-6">
+            Welcome to your Dog Information Dashboard
+        </div>
+        <nav class="flex justify-between items-center py-4 px-12 bg-white shadow-md">
+            <div class="flex items-center gap-20">
+                <a href="index.html" class="text-red-500 text-2xl font-semibold">Dogify</a>
+                <div class="flex items-center gap-2">
+                    <input type="text" class="border border-gray-300 rounded-full px-4 py-2 w-96" placeholder="Search for dog breeds...">
+                    <button class="bg-red-500 text-white rounded-full px-4 py-2">🔍</button>
+                </div>
+            </div>
+            <div class="relative">
+                <span class="cursor-pointer">👤 User Profile</span>
+                <div class="absolute hidden bg-gray-100 shadow-lg mt-2 rounded-md w-40" id="dropdown">
+                    <a href="profile.html" class="block px-4 py-2 hover:bg-gray-200">Profile</a>
+                    <a href="dashboard.html" class="block px-4 py-2 hover:bg-gray-200">Dashboard</a>
+                    <a href="index.html" class="block px-4 py-2 hover:bg-gray-200">Home</a>
+                    <a href="setting.html" class="block px-4 py-2 hover:bg-gray-200">Settings</a>
+                    <a href="index.html" onclick="signout()" class="block px-4 py-2 hover:bg-gray-200">Sign Out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex flex-col items-center mt-12">
+        <h1 class="text-3xl text-red-500 font-semibold">We'd Love Your Feedback!</h1>
+        <form class="bg-white shadow-md rounded-lg p-8 mt-8 w-1/2">
+            <label class="block text-gray-700 text-lg mb-2" for="name">Name (Optional)</label>
+            <input type="text" id="name" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4" placeholder="Your Name">
+
+            <label class="block text-gray-700 text-lg mb-2" for="feedback">Your Feedback</label>
+            <textarea id="feedback" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4" rows="5" placeholder="Let us know your thoughts..."></textarea>
+
+            <label class="block text-gray-700 text-lg mb-2" for="rating">Rating</label>
+            <select id="rating" class="border border-gray-300 rounded-lg w-full py-2 px-4 mb-4">
+                <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                <option value="4">⭐⭐⭐⭐ - Very Good</option>
+                <option value="3">⭐⭐⭐ - Good</option>
+                <option value="2">⭐⭐ - Fair</option>
+                <option value="1">⭐ - Poor</option>
+            </select>
+
+            <button type="submit" class="bg-red-500 text-white font-semibold py-2 px-8 rounded-full hover:bg-red-600 transition">Submit Feedback</button>
+        </form>
+    </main>
+
+    <script>
+        const profile = document.querySelector('.relative');
+        const dropdown = document.getElementById('dropdown');
+
+        profile.addEventListener('mouseover', () => {
+            dropdown.style.display = 'block';
+        });
+
+        profile.addEventListener('mouseout', () => {
+            dropdown.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
